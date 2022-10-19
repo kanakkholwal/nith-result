@@ -1,0 +1,185 @@
+.Navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+}
+.Navbar .navBrand {
+  margin: auto;
+  font-size: 2.25em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  word-wrap: break-word;
+  background: linear-gradient(to right, #3282b8, #0059b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
+.Header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(73, 76, 80, 0.2);
+}
+.Header .Title {
+  font-size: 0.85em;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.Header .searchSection {
+  margin-inline: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Header .searchSection .SearchBar {
+  border-radius: 50px;
+  max-width: 31.25rem;
+  width: calc(100% - 1.5rem);
+  padding: 0.75rem 1.25rem;
+  margin-block: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ResultSection {
+  display: flex;
+  column-gap: 1.25rem;
+  row-gap: 1.75rem;
+  padding: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.ResultSection .ResultCard {
+  position: relative;
+  animation: pop 0.3s forwards;
+  transition: all 1s ease-in-out !important;
+  opacity: 0;
+  flex: 1 1 auto;
+  min-height: 7rem;
+}
+@media (max-width: 576px) {
+  .ResultSection .ResultCard {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .ResultSection .ResultCard {
+    width: 40%;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .ResultSection .ResultCard {
+    width: 25%;
+    max-width: 18rem;
+  }
+}
+@media (min-width: 992px) {
+  .ResultSection .ResultCard {
+    width: 20%;
+    max-width: 22rem;
+  }
+}
+.ResultSection .ResultCard .CardBody {
+  padding: 0.75rem;
+  z-index: 1;
+}
+.ResultSection .ResultCard:hover {
+  box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.1333333333);
+}
+.ResultSection .ResultCard .rank {
+  color: #3282b8;
+  font-weight: 500;
+}
+.ResultSection .ResultCard:is([data-rank="1"], [data-rank="2"], [data-rank="3"])::before {
+  position: absolute;
+  top: -1.5rem;
+  right: 18%;
+  content: attr(data-rank);
+  border-radius: 1rem;
+  display: inline-block;
+  font-size: 2.25em;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-transform: capitalize;
+}
+.ResultSection .ResultCard[data-rank="1"]::before {
+  color: #CDDC39;
+}
+.ResultSection .ResultCard[data-rank="2"]::before {
+  color: #9C27B0;
+}
+.ResultSection .ResultCard[data-rank="3"]::before {
+  color: #673AB7;
+}
+.ResultSection .ResultCard .Rank {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.ResultSection .ResultCard .Name {
+  font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.ResultSection .ResultCard .Info {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.85em;
+}
+.ResultSection .ResultCard .Info span {
+  display: inline-block;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.ResultSection .ResultCard .minorInfo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 0.25rem;
+}
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  column-gap: 0.75rem;
+}
+.Pagination .Badge {
+  cursor: pointer;
+  user-select: none;
+  transition: all 250ms ease-in-out;
+}
+.Pagination .Badge[disabled] {
+  pointer-events: none;
+  background: none;
+}/*# sourceMappingURL=component.module.css.map */

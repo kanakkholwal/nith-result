@@ -1,0 +1,230 @@
+$xs:0;
+$sm:576px;
+$md:768px;
+$lg:992px;
+$xl:1200px;
+$xxl:1400px;
+
+.Header {
+    display: flex;
+    flex-wrap: wrap;
+
+    .Navbar {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 0.75rem;
+        padding: 0.5rem 1.25rem;
+
+        width: -webkit-fill-available !important;
+        max-width: 100%;
+
+        a {
+            text-decoration: none;
+            opacity: 0.75;
+            color: #fbfbfb;
+            border: 2px solid #c1b3b30f;
+            width: 48px;
+            height: 48px;
+            position: relative;
+            border-radius: 50%;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:is(:hover, :active, :focus) {
+                opacity: 1;
+            }
+        }
+
+
+    }
+
+    .HeroSection {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 1.25rem;
+        text-align: center;
+
+        .StudentName {
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 2;
+            word-wrap: break-word;
+            background: linear-gradient(to right, #3282b8, #0059b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: #0000;
+        }
+
+        .brief {
+            font-size: 1.2em;
+            font-weight: 500;
+            word-spacing: 3px;
+
+            span {
+                text-transform: uppercase !important;
+            }
+        }
+
+        .cgpi {
+            font-size: 1.25em;
+        }
+    }
+}
+
+.Switch {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 1rem;
+
+    span {
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        column-gap: 0.5rem
+    }
+}
+
+.Semesters {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+    row-gap: 2rem;
+    padding: 0.5rem;
+
+    @media (min-width: $md) {
+        gap: 1rem;
+    }
+
+    .SemCard {
+
+
+        animation: pop 0.2s forwards;
+        opacity: 0;
+        padding: 0.5em;
+        box-shadow: 0 15px 35px rgb(55 65 81 / 0%);
+        width: auto;
+        position: relative;
+        max-width: 25rem;
+        width: 100%;
+
+        &::before {
+            content: attr(data-index);
+            position: absolute;
+            font-size: 4rem;
+            top: -2rem;
+            left: 1rem;
+            background: linear-gradient(to right, #0b62b3, #a4acff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: #0000;
+        }
+
+
+
+
+        @media (max-width: $sm) {
+            width: 100%;
+        }
+
+        @media (min-width: $sm) and (max-width: $md) {
+            width: 45%;
+            min-width: 25rem;
+
+        }
+
+        @media (min-width: $md) and (max-width: $lg) {
+            width: 40%;
+        }
+
+        @media (min-width: $lg) and (max-width: $xl) {
+            width: 30%;
+        }
+
+        @media (min-width: $xl) {
+            width: 30%;
+        }
+
+    }
+
+    .SemCardHeader {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border-bottom: 2px solid #374151;
+        column-gap: 1.75rem;
+        padding: 0.75rem 1rem;
+
+
+        h2 {
+            margin-left: -0.5rem;
+        }
+
+        .points {
+            font-size: 0.7em;
+            margin-right: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        .cgpi {
+            font-size: 0.9em;
+
+        }
+
+        .points {
+            font-size: 0.7rem;
+        }
+
+
+    }
+
+    .subjectList {
+        padding: 0.25rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.75rem;
+
+        .Subject {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            font-size: 0.9em;
+            vertical-align: middle;
+            opacity: 0.9;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #374151;
+            }
+        }
+    }
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
