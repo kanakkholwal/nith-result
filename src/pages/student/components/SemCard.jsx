@@ -1,4 +1,4 @@
-import component from "./component.module.scss";
+import component from "./_component.module.scss";
 import { htmlDecode } from "../../../scripts/customFunctions";
 export default function SemCard({ data, index = 1 }) {
     const semester = data;
@@ -28,9 +28,15 @@ export default function SemCard({ data, index = 1 }) {
                             semester.subjects.map((subject, index) => {
                                 return (
                                     <li className={component.Subject} key={index}>
-                                        <h5>
-                                            {htmlDecode(subject.name)}
-                                        </h5>
+                                        <div>
+                                            <h5>
+                                                {htmlDecode(subject.name)}
+                                            </h5>
+                                            <h6>
+                                                {htmlDecode(subject.code)}
+                                            </h6>
+                                        </div>
+
                                         <span className="Badge Badge Badge_primary pilled">
                                             {subject.cgpi}
                                         </span>

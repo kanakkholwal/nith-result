@@ -1,4 +1,4 @@
-import component from './component.module.scss';
+import component from './_component.module.scss';
 import {
     Link
 } from "react-router-dom";
@@ -17,8 +17,7 @@ export default function Header() {
                 </Link>
             </nav>
             <header className={component.Header}>
-                <h1 className={component.Title}> Search By Name or Roll No. </h1>
-
+                <h1 className={component.Title}>Backend of the Site </h1>
             </header>
 
         </>

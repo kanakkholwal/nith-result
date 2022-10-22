@@ -1,0 +1,36 @@
+[debug] [2022-10-20T13:07:46.932Z] ----------------------------------------------------------------------
+[debug] [2022-10-20T13:07:46.935Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions,hosting
+[debug] [2022-10-20T13:07:46.936Z] CLI Version:   11.15.0
+[debug] [2022-10-20T13:07:46.936Z] Platform:      win32
+[debug] [2022-10-20T13:07:46.936Z] Node Version:  v16.15.0
+[debug] [2022-10-20T13:07:46.938Z] Time:          Thu Oct 20 2022 18:37:46 GMT+0530 (India Standard Time)
+[debug] [2022-10-20T13:07:46.938Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-20T13:07:47.112Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-20T13:07:47.113Z] > authorizing via signed-in user (kanakkholwal@gmail.com)
+[debug] [2022-10-20T13:07:47.113Z] [iam] checking project nith-result for permissions ["firebase.projects.get"]
+[debug] [2022-10-20T13:07:47.116Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nith-result:testIamPermissions [none]
+[debug] [2022-10-20T13:07:47.117Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nith-result:testIamPermissions x-goog-quota-user=projects/nith-result
+[debug] [2022-10-20T13:07:47.117Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nith-result:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-10-20T13:07:51.009Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nith-result:testIamPermissions 200
+[debug] [2022-10-20T13:07:51.009Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nith-result:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-10-20T13:07:51.012Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nith-result [none]
+[debug] [2022-10-20T13:07:54.011Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nith-result 200
+[debug] [2022-10-20T13:07:54.011Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nith-result {"projectId":"nith-result","projectNumber":"784793998246","displayName":"nith-result","name":"projects/nith-result","resources":{"hostingSite":"nith-result","storageBucket":"nith-result.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_efe6bee0-77f7-4ffa-9f7e-9c94116ef877"}
+[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-10-20T13:07:54.054Z] defaultcredentials: writing to file C:\Users\user\AppData\Roaming\firebase\kanakkholwal_gmail_com_application_default_credentials.json
+[debug] [2022-10-20T13:07:54.056Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/nith-result/sites 
+[debug] [2022-10-20T13:07:54.059Z] Setting GAC to C:\Users\user\AppData\Roaming\firebase\kanakkholwal_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\user\\AppData\\Roaming\\firebase\\kanakkholwal_gmail_com_application_default_credentials.json"}}
+[debug] [2022-10-20T13:07:54.060Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nith-result/adminSdkConfig [none]
+[debug] [2022-10-20T13:07:54.835Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nith-result/adminSdkConfig 200
+[debug] [2022-10-20T13:07:54.835Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nith-result/adminSdkConfig {"projectId":"nith-result","storageBucket":"nith-result.appspot.com","locationId":"asia-south1"}
+[debug] [2022-10-20T13:07:55.532Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/nith-result/sites 200
+[debug] [2022-10-20T13:07:55.532Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/nith-result/sites {"sites":[{"name":"projects/nith-result/sites/nith-result","defaultUrl":"https://nith-result.web.app","appId":"1:784793998246:web:eb4c2befca14f59f08b567","type":"DEFAULT_SITE"}]}
+[debug] [2022-10-20T13:07:55.533Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nith-result/webApps/1:784793998246:web:eb4c2befca14f59f08b567/config [none]
+[debug] [2022-10-20T13:07:58.032Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nith-result/webApps/1:784793998246:web:eb4c2befca14f59f08b567/config 200
+[debug] [2022-10-20T13:07:58.032Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nith-result/webApps/1:784793998246:web:eb4c2befca14f59f08b567/config {"projectId":"nith-result","appId":"1:784793998246:web:eb4c2befca14f59f08b567","storageBucket":"nith-result.appspot.com","locationId":"asia-south1","apiKey":"AIzaSyDgmthXeE_u23V5kKat8EHme4AtRhBEEi4","authDomain":"nith-result.firebaseapp.com","messagingSenderId":"784793998246","measurementId":"G-88PP04M8D0"}
+[debug] [2022-10-20T13:07:58.040Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nith-result [none]
+[debug] [2022-10-20T13:07:59.520Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nith-result 200
+[debug] [2022-10-20T13:07:59.520Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nith-result {"projectId":"nith-result","projectNumber":"784793998246","displayName":"nith-result","name":"projects/nith-result","resources":{"hostingSite":"nith-result","storageBucket":"nith-result.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_efe6bee0-77f7-4ffa-9f7e-9c94116ef877"}
+[info] i  functions: Watching "C:\Users\user\Documents\GitHub\nith\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\user\\Documents\\GitHub\\nith\\functions\" for Cloud Functions..."}}
+[info] i  hosting[nith-result]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}

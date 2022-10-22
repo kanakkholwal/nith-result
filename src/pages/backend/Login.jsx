@@ -4,11 +4,16 @@ import FirebaseApp from "../../firebase/FirebaseApp";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import SnackBar from "../../components/SnackBar";
 import AdminPanel from './AdminPanel';
-import component from './components/component.module.scss';
+import component from './components/_component.module.scss';
 import {
     Link
 } from "react-router-dom";
+import {
+    FormatString
+} from "../../scripts/customFunctions";
 export default function Login() {
+
+    document.title = "Login  | NITH Results Backend";
 
     const auth = getAuth(FirebaseApp);
 
@@ -16,17 +21,6 @@ export default function Login() {
     const [Password, SetPassword] = useState("");
     const [user, setUser] = useState(null);
 
-    // const [userName, setUserName] = useState();
-
-    // const [signUp, SetSignUp] = useState(false);
-    // function SwitchLogin() {
-    //     SetSignUp(!signUp);
-    // }
-    function FormatString(str) {
-        var string = str.split("auth/")[1].split("-").join(" ");
-        return string.charAt(0).toUpperCase() + string.slice(1);
-
-    }
     // If User is Logged in
     useEffect(() => {
         const loggedInUser = localStorage.getItem("user");
@@ -40,7 +34,6 @@ export default function Login() {
 
 
     }, []);
-
 
     // SignInUser 
     function SignInUser(email, password) {
@@ -71,11 +64,11 @@ export default function Login() {
     // Sign Out User
     // function SignOutUser() {
     //     signOut(auth).then(() => {
-    //         // Sign-out successful.
+    // Sign-out successful.
     //         SnackBar("Sign-out successfully", 1500, "OK");
 
     //     }).catch((error) => {
-    //         // An error happened.
+    // An error happened.
     //         SnackBar(error, 1500, "OK");
 
     //     });
@@ -88,11 +81,8 @@ export default function Login() {
         <>
 
             {user ?
-                <>
-
-                    <AdminPanel CurrentUser={user} App={FirebaseApp} />
-
-                </> :
+                <AdminPanel CurrentUser={user} App={FirebaseApp} />
+                :
                 <>
                     <nav className={component.Navbar}>
                         <Link to="/" className={component.navBrand + " Badge_positioned"} >
@@ -102,43 +92,42 @@ export default function Login() {
                     <header className={component.Header}>
                         <h1 className={component.Title}> AdminPanel </h1>
 
-                    </header>                    <main className='p-5'>
+                    </header>
+                    <main className={component.FormContainer}>
 
-                        <div className="FormContainer m-auto">
-                            <form onSubmit={(e) => handleSubmit(e)}>
-                                <h1 className="FormTitle"> {"Login"}</h1>
-                                <div className="G_Form-element w-100">
-                                    <label htmlFor="email" className="G_Form-label">Email address</label>
-                                    <input
-                                        type="email"
-                                        className="G_Form-input"
-                                        id="email"
-                                        name="email"
-                                        value={Email} onChange={(e) => SetEmail(e.target.value)}
-                                        placeholder="Enter email address"
-                                    />
+                        <form onSubmit={(e) => handleSubmit(e)}>
+                            <h1 className={component.FormTitle}> {"Login"}</h1>
+                            <div className="G_Form-element Form_Floating ">
+                                <input
+                                    type="email"
+                                    className="G_Form-input"
+                                    id="email"
+                                    name="email"
+                                    value={Email} onChange={(e) => SetEmail(e.target.value)}
+                                    placeholder="Enter email address"
+                                />
+                                <label htmlFor="email" className="G_Form-label">Email address</label>
 
-                                </div>
-                                <div className="G_Form-element w-100">
-                                    <label htmlFor="password" className="G_Form-label" >Password</label>
-                                    <input
-                                        type="password"
-                                        className="G_Form-input"
-                                        id="password"
-                                        name="password"
-                                        placeholder="Password"
-                                        autoComplete={"true"}
-                                        value={Password} onChange={(e) => SetPassword(e.target.value)}
-                                    />
-                                </div>
-                                <button type="submit" className="G_Form-submit">
-                                    Login To AdminPanel
-                                </button>
+                            </div>
+                            <div className="G_Form-element Form_Floating">
+                                <input
+                                    type="password"
+                                    className="G_Form-input"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Password"
+                                    autoComplete={"true"}
+                                    value={Password} onChange={(e) => SetPassword(e.target.value)}
+                                />
+                                <label htmlFor="password" className="G_Form-label" >Password</label>
+                            </div>
+                            <button type="submit" className={component.FormSubmit}>
+                                Login To AdminPanel
+                            </button>
 
 
-                            </form>
+                        </form>
 
-                        </div>
                     </main>
                 </>}
         </>);

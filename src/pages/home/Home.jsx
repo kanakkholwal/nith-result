@@ -7,6 +7,8 @@ import React, { useState, useEffect } from 'react';
 const LIMIT = 20;
 
 export default function Home() {
+    document.title = "NITH Results";
+
     const [displayData, setDisplayData] = useState(Students());
     const [pageIndex, setPageIndex] = useState(1);
     const [search, setSearch] = useState("");

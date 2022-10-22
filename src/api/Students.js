@@ -1,9 +1,9 @@
-import data from "./data.json";
+import data from "./students.json";
 import { ranking } from "../scripts/customFunctions"
 const Students = (Batch, Branch) => {
 
 
-    var output = null;
+    let output = null;
     Batch && (output = data.filter((child) => child.Batch === Batch));
     Branch && (output = data.filter((child) => child.Branch === Branch));
 
@@ -13,7 +13,10 @@ const Students = (Batch, Branch) => {
 
     // output = uniq(output);
     // Sort Highest to Lowest Cgpi
+
     output = output.sort((a, b) => parseFloat(b.semesters[b.semesters.length - 1].cgpi) - parseFloat(a.semesters[a.semesters.length - 1].cgpi));
+
+    // console.log(output.filter((stud) => stud.semesters[stud.semesters.length - 1] === undefined))
 
     // Year Rank (Increasing Order)
     const correspondingRanks = ranking(output, (a, b) => parseFloat(b.semesters[b.semesters.length - 1].cgpi) > parseFloat(a.semesters[a.semesters.length - 1].cgpi));

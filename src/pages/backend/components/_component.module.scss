@@ -1,0 +1,95 @@
+$xs:0;
+$sm:576px;
+$md:768px;
+$lg:992px;
+$xl:1200px;
+$xxl:1400px;
+
+.Navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+
+    .navBrand {
+        margin: auto;
+        font-size: 2.25em;
+        font-weight: 700;
+        letter-spacing: 2px;
+        word-wrap: break-word;
+        background: linear-gradient(to right, #3282b8, #0059b2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #0000;
+
+
+    }
+}
+
+.Header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #494c5033;
+
+    .Title {
+        font-size: 1.25em;
+        margin-block: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+
+    }
+
+
+}
+
+.FormContainer {
+    padding-block: 1.75rem;
+    text-align: center;
+
+    form {
+        max-width: 728px;
+        width: calc(100% - 2rem);
+        margin: 1rem auto;
+
+        .FormTitle {
+            letter-spacing: 3px;
+            font-size: 2.75em;
+
+            background: linear-gradient(to right, #292e4d, #9fa6f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: #0000;
+        }
+
+        .FormSubmit {
+            background: none;
+            color: #9fa6f7;
+            font-size: 1em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.5rem;
+
+            border: 3px solid #292e4d;
+            cursor: pointer;
+            transition: all 100ms ease-in-out;
+
+            &:hover {
+                background: #9fa6f7;
+                color: #292e4d;
+                border: 3px solid #9fa6f7;
+
+            }
+        }
+    }
+}
+
+.Main {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}

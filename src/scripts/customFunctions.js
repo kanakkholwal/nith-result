@@ -13,6 +13,11 @@ export function uniq(a) {
         return !pos || item !== ary[pos - 1];
     });
 }
+export function Sort(output) {
+    output.sort(function (a, b) {
+        return parseFloat(b.semesters[b.semesters.length - 1].cgpi) - parseFloat(a.semesters[a.semesters.length - 1].cgpi);
+    });
+}
 // ranking([8, 6, 9, 9, 5], (a, b) => a < b);
 export function FormatString(str) {
     var string = str.split("auth/")[1].split("-").join(" ");

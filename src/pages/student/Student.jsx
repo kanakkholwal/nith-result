@@ -2,13 +2,15 @@ import { useParams } from "react-router-dom";
 import Students from "../../api/Students";
 import Header from './components/Header';
 import SemCard from './components/SemCard';
-import component from "./components/component.module.scss";
+import component from "./components/_component.module.scss";
 import SharePage from "../../components/SharePage";
 import ChartResult from './components/Chart.tsx';
 import { useState } from "react";
 
 export default function Student() {
     const { rollNo } = useParams();
+    document.title = rollNo + "  | NITH Results";
+
     const student = Students().find((student) => student.RollNo === rollNo);
     const [graph, setGraph] = useState(false);
 

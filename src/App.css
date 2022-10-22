@@ -797,7 +797,6 @@ html ::-webkit-scrollbar-track {
 .G_Form-element .G_Form-input,
 .G_Form-element .G_Form-textarea {
   order: 2;
-  width: calc(100% - 2rem);
 }
 
 .G_Form-element .G_Form-select,
@@ -903,7 +902,9 @@ html ::-webkit-scrollbar-track {
 }
 
 .G_Form-element.Form_Floating .G_Form-input:focus~.G_Form-label,
-.G_Form-element.Form_Floating .G_Form-textarea:focus~.G_Form-label {
+.G_Form-element.Form_Floating .G_Form-textarea:focus~.G_Form-label,
+.G_Form-element.Form_Floating .G_Form-input:not(:placeholder-shown)~.G_Form-label,
+.G_Form-element.Form_Floating .G_Form-textarea:not(:placeholder-shown)~.G_Form-label {
   z-index: 2;
   color: #6658d3;
   transform: translateY(-0.75rem);

@@ -1,4 +1,4 @@
-import component from "./component.module.scss";
+import component from "./_component.module.scss";
 import { Link } from 'react-router-dom';
 export default function Header({ data, setGraph, isGraph }) {
     const student = data;
