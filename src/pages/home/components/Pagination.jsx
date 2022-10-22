@@ -4,7 +4,6 @@ import React from 'react';
 
 export default function Pagination({ pageIndex = 1, onPageUpdate, maxIndex }) {
 
-
     return (
         <div className={component.Pagination}>
             <span className={'Badge ' + component.Badge} role="button" onClick={() => onPageUpdate(Math.max(0, pageIndex - 1))} disabled={(pageIndex === 1)}>
