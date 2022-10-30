@@ -1,5 +1,5 @@
 import Card from './Card';
-import component from "./component.module.scss";
+import component from "./_component.module.scss";
 import React from 'react';
 
 export default function Section({ data }) {
@@ -8,14 +8,16 @@ export default function Section({ data }) {
 
     const students = data;
 
+
+
     return (
         <div className={component.ResultSection}>
             {
-                (students && students.length > 0) ? students.map((student, index) => {
-                    return <Card student={student} key={index} rank={student.Year_Rank} />
+                (students?.length > 0) ? students.map((student, index) => {
+                    return <Card student={student} key={index} rank={student.Year_Rank} style={{ animationDelay: `${(1 / students.length) * index}s` }} />
                 })
                     :
-                    <span className='Badge Badge_danger'>
+                    <span className='Badge Badge_danger animate_bounce' style={{ animationDuration: "2s" }}>
                         Not Results Found...
                     </span>
             }

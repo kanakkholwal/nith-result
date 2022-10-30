@@ -1,19 +1,30 @@
 import { useRef, useState } from 'react';
 import './_SharePage.scss';
-export default function SharePage({ size = 24, ...props }) {
+export default function SharePage({ size = 24, shareData, ShareIcon, ...props }) {
 
     const [share, setShare] = useState(false);
     const CopyBtn = useRef(null);
-    const Share = () => {
+    const Share = (e) => {
+        e.preventDefault();
+
         if (typeof navigator.share === 'undefined') {
             console.log("No share API available!");
             setShare(true);
         } else {
-            navigator.share({
-                url: document.URL,
-                title: document.title,
-                text: document.description
-            });
+            if (shareData) {
+
+                navigator.share(shareData);
+
+            }
+            else {
+
+                navigator.share({
+                    url: document.URL,
+                    title: document.title,
+                    text: document.description
+                });
+            }
+
             setShare(false);
 
         }
@@ -53,17 +64,20 @@ export default function SharePage({ size = 24, ...props }) {
 
     return (<>
 
-        <span onClick={() => Share()} className="ShareBtn" title='Share this Page'>
-            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size}
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
-                strokeLinecap="round" strokeLinejoin="round"
-                className="feather feather-share-2">
-                <circle cx={18} cy={5} r={3} />
-                <circle cx={6} cy={12} r={3} />
-                <circle cx={18} cy={19} r={3} />
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-            </svg>
+        <span onClick={(e) => Share(e)} className="ShareBtn" title={'Share Result'} {...props}>
+            {
+                ShareIcon ? ShareIcon :
+                    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size}
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
+                        strokeLinecap="round" strokeLinejoin="round"
+                        className="feather feather-share-2">
+                        <circle cx={18} cy={5} r={3} />
+                        <circle cx={6} cy={12} r={3} />
+                        <circle cx={18} cy={19} r={3} />
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                    </svg>
+            }
         </span>
 
         {

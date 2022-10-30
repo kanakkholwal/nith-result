@@ -9,12 +9,13 @@ $xxl:1400px;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.25rem;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
     text-align: center;
+    border-bottom: 1px solid #494c5033;
 
     .navBrand {
-        margin: auto;
+        margin-right: auto;
         font-size: 2.25em;
         font-weight: 700;
         letter-spacing: 2px;
@@ -22,8 +23,56 @@ $xxl:1400px;
         background: linear-gradient(to right, #3282b8, #0059b2);
         -webkit-background-clip: text;
         -webkit-text-fill-color: #0000;
+    }
+
+    .userArea {
+        position: relative;
+        margin-left: auto;
 
 
+
+        .userProfile {
+            border-radius: 50%;
+            padding: 0.45rem 0.5rem;
+            cursor: pointer;
+        }
+
+        .userProfileCard {
+            position: absolute;
+            top: 100%;
+            right: 50%;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 500ms ease-in-out;
+            z-index: 99;
+
+            &.isOpen {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            padding: 0.5rem 0.25rem;
+            background-color: #1b1f29;
+            color:#fbfbfb;
+            background-clip: border-box;
+            border-radius: 0.5rem;
+            box-shadow: 0 15px 35px rgb(55 65 81 / 10%),
+            0 5px 15px rgb(55 65 81 / 10%);
+            display: flex;
+            flex-direction: column;
+
+            li {
+                padding: 0.5rem 0.75rem;
+                text-align: left;
+
+                &:not(:first-child) {
+                    border-top: 1px solid #494c5033;
+
+                }
+            }
+        }
     }
 }
 
@@ -33,7 +82,7 @@ $xxl:1400px;
     flex-direction: column;
     text-align: center;
     margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
     border-bottom: 1px solid #494c5033;
 
     .Title {

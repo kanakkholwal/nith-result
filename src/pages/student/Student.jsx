@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Students from "../../api/Students";
+import { Students } from "../../api/Students";
 import Header from './components/Header';
 import SemCard from './components/SemCard';
 import component from "./components/_component.module.scss";
@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export default function Student() {
     const { rollNo } = useParams();
-    document.title = rollNo + "  | NITH Results";
+    document.title = rollNo.toUpperCase() + "  | NITH Results";
 
     const student = Students().find((student) => student.RollNo === rollNo);
     const [graph, setGraph] = useState(false);

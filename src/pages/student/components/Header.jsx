@@ -20,9 +20,11 @@ export default function Header({ data, setGraph, isGraph }) {
                     <span className="Badge Badge_dark">
                         {student.RollNo}
                     </span>
-                    <span className="Badge  ms-2">
-                        {student.Branch}
+
+                    <span className="Badge  ms-2" data-branch-rank={student.Branch_Rank} title={"#" + student.Branch_Rank + "_ in " + student.Branch + " Branch"}>
+                        {"#" + student.Branch_Rank + "_ "}  {student.Branch}
                     </span>
+
                 </h2>
                 <div>
 

@@ -1,4 +1,4 @@
-import component from './component.module.scss';
+import component from './_component.module.scss';
 import React from 'react';
 
 

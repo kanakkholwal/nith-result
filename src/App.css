@@ -1142,11 +1142,11 @@ html ::-webkit-scrollbar-track {
   display: none;
 }
 
-.G_Form-selectWrapper {
+.BranchSelect-Container {
   position: relative;
 }
 
-.G_Form-selectWrapper svg {
+.BranchSelect-Container svg {
   position: absolute;
   height: 20px;
   top: 50%;
@@ -1155,7 +1155,8 @@ html ::-webkit-scrollbar-track {
   fill: rgba(122, 159, 183, 0.431372549);
 }
 
-.G_Form-selectWrapper .G_Form-SelectToggle {
+.BranchSelect-Container .BranchSelect__input-container,
+.BranchSelect-Container .BranchSelect__control {
   border-radius: 0.25rem;
   padding: 0.65rem;
   width: 100%;
@@ -1170,16 +1171,25 @@ html ::-webkit-scrollbar-track {
   font-weight: bold;
 }
 
-.G_Form-selectWrapper .G_Form-SelectToggle:is(:focus, :focus-visible, :active, .isActive) {
+.BranchSelect-Container .BranchSelect__input-container {
+  border-color: none;
+}
+
+.BranchSelect-Container .BranchSelect__control {
+  border-color: transparent;
+}
+
+.BranchSelect-Container .BranchSelect__input-container:is(:focus, :focus-visible, :active, .isActive) {
   border-color: #6658d3;
   color: #6658d3;
 }
 
-.G_Form-selectWrapper .G_Form-SelectToggle:is(:focus, :focus-visible, :active, .isActive)~svg {
+
+.BranchSelect-Container .BranchSelect__input-container:is(:focus, :focus-visible, :active, .isActive)~svg {
   fill: #6658d3;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown {
+.BranchSelect-Container .BranchSelect__menu {
   position: absolute;
   top: calc(100% + 0.25rem);
   left: 0;
@@ -1191,42 +1201,34 @@ html ::-webkit-scrollbar-track {
   outline: 0;
   background-color: #6658d3;
   transition: all 0.2s;
-  transform: scaleY(0.8);
-  opacity: 0;
-  visibility: hidden;
-  max-height: 200px;
+
   overflow: auto;
   box-shadow: 2px 2px 13px 5px rgba(9, 12, 16, 0.2509803922);
 }
 
-.G_Form-selectWrapper .G_SelectDropdown::-webkit-scrollbar {
+.BranchSelect-Container .BranchSelect__menu::-webkit-scrollbar {
   width: 8px;
   height: 0.5rem;
   cursor: pointer !important;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown::-webkit-scrollbar:hover {
+.BranchSelect-Container .BranchSelect__menu::-webkit-scrollbar:hover {
   background-color: #6658d3;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown::-webkit-scrollbar-thumb {
+.BranchSelect-Container .BranchSelect__menu::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.15);
   border-radius: 24px;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown::-webkit-scrollbar-thumb:active {
+.BranchSelect-Container .BranchSelect__menu::-webkit-scrollbar-thumb:active {
   box-shadow: inset 0 0 0 24px rgba(0, 0, 0, 0.3);
   border-radius: 24px;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown.isOpen {
-  transform: scaleY(1);
-  opacity: 1;
-  visibility: visible;
-}
 
-.G_Form-selectWrapper .G_SelectDropdown ul {
+.BranchSelect-Container .BranchSelect__menu ul {
   background-color: #23272f;
   width: 100%;
   display: flex;
@@ -1236,7 +1238,7 @@ html ::-webkit-scrollbar-track {
   border-radius: inherit;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown ul li.G_SelectDropdown-item {
+.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item {
   padding: 0.25rem 1rem;
   color: rgba(255, 255, 255, 0.7490196078);
   cursor: pointer;
@@ -1257,25 +1259,25 @@ html ::-webkit-scrollbar-track {
   user-select: none;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown ul li.G_SelectDropdown-item:is(:hover, :active) {
+.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item:is(:hover, :active) {
   background-color: #404652;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown ul li.G_SelectDropdown-item.isActive {
+.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item.isActive {
   color: #6658d3;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown ul li.G_SelectDropdown-item.isActive:is(:hover, :active) {
+.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item.isActive:is(:hover, :active) {
   background-color: #404652;
   color: #b4abff;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown ul li.G_SelectDropdown-item:first-child {
+.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item:first-child {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
 
-.G_Form-selectWrapper .G_SelectDropdown ul li.G_SelectDropdown-item:last-child {
+.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item:last-child {
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 }
