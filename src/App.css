@@ -1144,9 +1144,10 @@ html ::-webkit-scrollbar-track {
 
 .BranchSelect-Container {
   position: relative;
+  max-width: 500px;
 }
 
-.BranchSelect-Container svg {
+.BranchSelect__indicator svg {
   position: absolute;
   height: 20px;
   top: 50%;
@@ -1155,8 +1156,22 @@ html ::-webkit-scrollbar-track {
   fill: rgba(122, 159, 183, 0.431372549);
 }
 
-.BranchSelect-Container .BranchSelect__input-container,
 .BranchSelect-Container .BranchSelect__control {
+  border-radius: 0.25rem;
+  padding: 0.65rem;
+  width: 100%;
+  font-weight: 700;
+  background: #23272f;
+  color: rgba(255, 255, 255, 0.7490196078);
+  border: 2px solid #374151;
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  font-weight: bold;
+}
+
+.BranchSelect-Container .BranchSelect__input-container {
   border-radius: 0.25rem;
   padding: 0.65rem;
   width: 100%;
@@ -1228,7 +1243,7 @@ html ::-webkit-scrollbar-track {
 }
 
 
-.BranchSelect-Container .BranchSelect__menu ul {
+.BranchSelect-Container .BranchSelect__menu .BranchSelect__menu-list {
   background-color: #23272f;
   width: 100%;
   display: flex;
@@ -1238,7 +1253,7 @@ html ::-webkit-scrollbar-track {
   border-radius: inherit;
 }
 
-.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item {
+.BranchSelect-Container .BranchSelect__menu .BranchSelect__menu-list .BranchSelect__option {
   padding: 0.25rem 1rem;
   color: rgba(255, 255, 255, 0.7490196078);
   cursor: pointer;
@@ -1259,25 +1274,27 @@ html ::-webkit-scrollbar-track {
   user-select: none;
 }
 
-.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item:is(:hover, :active) {
+.BranchSelect-Container .BranchSelect__menu .BranchSelect__menu-list .BranchSelect__option:is(:hover, :active, .BranchSelect__option--is-focused) {
   background-color: #404652;
 }
 
-.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item.isActive {
+.BranchSelect-Container .BranchSelect__menu .BranchSelect__menu-list .BranchSelect__option.BranchSelect__option--is-selected {
   color: #6658d3;
+  background-color: inherit;
+
 }
 
-.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item.isActive:is(:hover, :active) {
+.BranchSelect-Container .BranchSelect__menu .BranchSelect__menu-list .BranchSelect__option.BranchSelect__option--is-selected:is(:hover, :active, .BranchSelect__option--is-focused) {
   background-color: #404652;
   color: #b4abff;
 }
 
-.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item:first-child {
+.BranchSelect-Container .BranchSelect__menu .BranchSelect__menu-list .BranchSelect__option:first-child {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
 
-.BranchSelect-Container .BranchSelect__menu ul li.BranchSelect__menu-item:last-child {
+.BranchSelect-Container .BranchSelect__menu .BranchSelect__menu-list .BranchSelect__option:last-child {
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 }

@@ -14,7 +14,7 @@ export default function Section({ data }) {
         <div className={component.ResultSection}>
             {
                 (students?.length > 0) ? students.map((student, index) => {
-                    return <Card student={student} key={index} rank={student.Year_Rank} style={{ animationDelay: `${(1 / students.length) * index}s` }} />
+                    return <Card student={student} key={index} style={{ animationDelay: `${(1 / students.length) * index}s` }} />
                 })
                     :
                     <span className='Badge Badge_danger animate_bounce' style={{ animationDuration: "2s" }}>

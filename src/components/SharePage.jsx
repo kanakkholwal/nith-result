@@ -9,6 +9,7 @@ export default function SharePage({ size = 24, shareData, ShareIcon, ...props })
 
         if (typeof navigator.share === 'undefined') {
             console.log("No share API available!");
+
             setShare(true);
         } else {
             if (shareData) {

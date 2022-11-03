@@ -117,15 +117,15 @@ a {
 
         .rank {
 
-            color: #3282b8;
+            color: #45b2fc;
             font-weight: 500;
         }
 
-        &:is([data-rank="1"], [data-rank="2"], [data-rank="3"])::before {
+        &:is([data-college-rank="1"], [data-college-rank="2"], [data-college-rank="3"])::before {
             position: absolute;
             top: -1.5rem;
             right: 18%;
-            content: attr(data-rank);
+            content: attr(data-college-rank);
             border-radius: 1rem;
             display: inline-block;
             font-size: 2.25em;
@@ -137,17 +137,17 @@ a {
             text-transform: capitalize;
         }
 
-        &[data-rank="1"]::before {
+        &[data-year-rank="1"]::before {
             color: #CDDC39;
 
         }
 
-        &[data-rank="2"]::before {
+        &[data-year-rank="2"]::before {
             color: #9C27B0;
 
         }
 
-        &[data-rank="3"]::before {
+        &[data-year-rank="3"]::before {
             color: #673AB7;
 
         }

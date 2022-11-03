@@ -3,15 +3,14 @@ import {
     Link
 } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-// import { Branches } from '../../../api/Students';
-// import Select from 'react-select';
-// const options = []
-// Branches.forEach((element) => {
-//     options.push(
-//         { value: element.toString(), label: element.toString() }
+import { Branches } from '../../../api/Students';
+const options = []
+Branches.forEach((element) => {
+    options.push(
+        { value: element.toString(), label: element.toString() }
 
-//     )
-// });
+    )
+});
 export default function Header({ onSearch, onBranch }) {
 
     const [value, SetValue] = useState("");
@@ -48,12 +47,8 @@ export default function Header({ onSearch, onBranch }) {
                         return <option value={branch} key={i}>{branch}</option>
                     })}
                 </select> */}
-                {/* 
-                <Select
-                    options={options}
-                    className="BranchSelect-Container"
-                    classNamePrefix="BranchSelect"
-                /> */}
+
+
 
 
             </header>

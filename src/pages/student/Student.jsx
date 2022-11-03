@@ -15,6 +15,14 @@ export default function Student() {
     const [graph, setGraph] = useState(false);
 
 
+
+
+    const mail = {
+        email: student.RollNo + '@nith.ac.in',
+        subject: "Contacting Through " + window.location.host,
+        body: `Good Evening Sir/Ma'am ,\n  I'm ___Your_Name___ . I want to contact to you regrading ___`,
+    }
+
     return (
         <>
             <Header data={student} />
@@ -33,6 +41,14 @@ export default function Student() {
 
 
                 </span>
+                <a className="Badge Badge_dark  ms-2"
+                    href={`mailto:${mail.email}?subject=${mail.subject}&body=${mail.body}`}
+
+
+
+                    title={"Mail your R.D. : " + student.Name}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+                </a>
                 <SharePage />
             </div>
             <div className={component.Semesters}>
