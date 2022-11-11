@@ -1,8 +1,9 @@
 import batch_21 from "./students_21.json";
 import batch_20 from "./students_20.json";
+import batch_19 from "./students_19.json";
 import { ranking, uniq } from "../scripts/customFunctions";
 
-const _batches = [batch_21, batch_20]
+const _batches = [batch_21, batch_20, batch_19]
 let data = [];
 _batches.forEach((batch) => data.push(...batch));
 
