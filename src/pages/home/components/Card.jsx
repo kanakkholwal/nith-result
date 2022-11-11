@@ -12,9 +12,6 @@ export default function Card({ student, ...props }) {
 
 
 
-
-
-
     return (
         <Link to={"/r/" + student.RollNo}
             className={"G_Card " + component.ResultCard + ((![1, 2, 3].includes(student.Batch_Rank)) ? " Badge_positioned" : " ")}
