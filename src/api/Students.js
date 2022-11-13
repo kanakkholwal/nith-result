@@ -3,7 +3,7 @@ import batch_20 from "./students_20.json";
 import batch_19 from "./students_19.json";
 import { ranking, uniq } from "../scripts/customFunctions";
 
-const _batches = [batch_21, batch_20, batch_19]
+const _batches = [batch_21, batch_20]
 let data = [];
 _batches.forEach((batch) => data.push(...batch));
 
@@ -34,6 +34,10 @@ Branches.forEach((branch) => {
 });
 
 export const Students = (Batch, Branch) => {
+    let fault = batch_19
+    fault = fault.filter((stud) => stud.semesters.length === 0)
+
+    console.log(fault);
 
     let output = null;
     Batch && (output = data.filter((child) => child.Batch === Batch));
